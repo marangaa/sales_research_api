@@ -1,0 +1,13 @@
+fastapi~=0.115.6
+pydantic~=2.10.3
+openai~=1.57.3
+SQLAlchemy~=2.0.36
+protobuf~=5.29.1
+celery~=5.4.0
+pydantic-settings~=2.7.0
+pytest~=8.3.4
+starlette~=0.41.3
+prometheus_client~=0.21.1
+python-dotenv~=1.0.1
+uvicorn~=0.32.1
+alembic~=1.14.0

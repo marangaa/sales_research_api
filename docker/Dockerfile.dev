@@ -1,0 +1,19 @@
+FROM python:3.9
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt requirements-dev.txt ./
+RUN pip install -r requirements.txt -r requirements-dev.txt
+
+# Make the start script executable
+COPY scripts/start.sh /app/scripts/
+RUN chmod +x /app/scripts/start.sh
+
+# Keep container running
+CMD ["tail", "-f", "/dev/null"]
